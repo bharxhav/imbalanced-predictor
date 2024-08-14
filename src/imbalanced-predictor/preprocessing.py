@@ -9,9 +9,9 @@ class Preprocessor:
     Preprocesses the dataset by splitting it into expanded training sets.
     """
 
-    def __init__(self, dataframe: pd.DataFrame, target_class: str) -> None:
+    def __init__(self, dataframe: pd.DataFrame, target_feature: str) -> None:
         self.df = dataframe
-        self.target_class = target_class
+        self.target_feature = target_feature
 
     def _categorize_data(self) -> dict:
         """
@@ -20,7 +20,7 @@ class Preprocessor:
 
         features = {}
 
-        for class_name in self.df[self.target_class].unique():
+        for class_name in self.df[self.target_feature].unique():
             features[class_name] = None
 
         return features
