@@ -21,6 +21,6 @@ class Preprocessor:
         features = {}
 
         for class_name in self.df[self.target_class].unique():
-            features[class_name] = self.df[self.df[self.target_class] == class_name]
+            features[class_name] = None
 
         return features
